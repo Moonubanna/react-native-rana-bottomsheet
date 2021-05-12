@@ -1,4 +1,4 @@
-# rn-bottom-test
+# react-native-rana-bottomsheet
 
 Cross platform scrollable bottom sheet for both Android and iOS. That integrates with all core scrollable components from React Native. This component with any view and smoth animation for React Native.
 
@@ -10,13 +10,13 @@ Cross platform scrollable bottom sheet for both Android and iOS. That integrates
 Open a Terminal in the project root and run:
 
 ```sh
-yarn add rn-bottom-test
+yarn add react-native-rana-bottomsheet
 ```
 
 or if you use `npm`:
 
 ```sh
-npm install rn-bottom-test
+npm install react-native-rana-bottomsheet
 ```
 
 Install and link [react-native-gesture-handler](https://kmagiera.github.io/react-native-gesture-handler/docs/getting-started.html) and [react-native-reanimated](https://github.com/kmagiera/react-native-reanimated).
@@ -25,7 +25,7 @@ Install and link [react-native-gesture-handler](https://kmagiera.github.io/react
 
 ```javascript
 import { Dimensions, Platform } from 'react-native'
-import BottomSheet from 'rn-bottom-test';
+import BottomSheet from 'react-native-rana-bottomsheet';
 const refBottom = React.useRef();
 const HEIGHT = Dimensions.get('screen').height;
 const snapPoints = [50, HEIGHT / 2, '70%', '100%'];
