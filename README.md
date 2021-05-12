@@ -1,9 +1,9 @@
 # rn-bottom-test
 
-Cross platform scrollable bottom sheet with virtualisation support and fully native animations!!
+Cross platform scrollable bottom sheet for both Android and iOS. That integrates with all core scrollable components from React Native. This component with any view and smoth animation for React Native.
 
-<!-- | ![](media/bottom1.gif)|
-| :--------------------:| -->
+| ![](media/bottom1.gif)|
+| :--------------------:|
 
 ## Installation
 
@@ -19,8 +19,6 @@ or if you use `npm`:
 npm install rn-bottom-test
 ```
 
-If you are using Expo, you are done.
-
 Install and link [react-native-gesture-handler](https://kmagiera.github.io/react-native-gesture-handler/docs/getting-started.html) and [react-native-reanimated](https://github.com/kmagiera/react-native-reanimated).
 
 ## Usage
@@ -29,27 +27,34 @@ Install and link [react-native-gesture-handler](https://kmagiera.github.io/react
 import { Dimensions, Platform } from 'react-native'
 import BottomSheet from 'rn-bottom-test';
 const refBottom = React.useRef();
-const HEIGHT = Dimensions.get('screen').height
+const HEIGHT = Dimensions.get('screen').height;
+const snapPoints = [50, HEIGHT / 2, '70%', '100%'];
 
 class Example extends React.Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <BottomSheet 
-        isOpen
-        ref={refBottom}
-        sliderMaxHeight={HEIGHT - 100}
-        >
-        {(onScrollEndDrag) => (
-          <ScrollView onScrollEndDrag={onScrollEndDrag}>
-            {[...Array(20)].map((_, index) => (
-              <View key={`${index}`} style={styles.itemStyle}>
-                <Text>{`Item number: ${index + 1}`}</Text>
-              </View>
-            ))}
-          </ScrollView>
-        )}
-        </BottomSheet>
+      <BottomSheet
+       ref={refBottom}
+          borderRadius={10}
+          bottomSheerColor="#FFFFFF"
+          ref="BottomSheet"
+          snapPoints={snapPoints}
+          enabledGestureInteraction={true}
+          enabledContentGestureInteraction={true}
+          enabledContentTapInteraction={true}
+          enabledInnerScrolling={true}
+          renderHeader={
+            <View>
+              <Text style={styles.text}>Header View</Text>
+            </View>
+          }
+          renderContent={
+            <View style={styles.body}>
+              <Text style={styles.text}>Body View</Text>
+            </View>
+          }
+        />
       </View>
     );
   }
@@ -60,14 +65,15 @@ class Example extends React.Component {
 
 | name                         | required | default   | description                                                                                                                                                                                                                                                                    |
 | ---------------------------- | -------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| children              | yes       | <View />         | A component or a render function. Use toggleSlider function instead 
-| isOpen              | no       | true         | Initial state of the panel; true to render it opened, false otherwise. Important: Do not try to open/close the panel througth this prop, see togglePanel method instead                                                                                                                    
-| sliderMinHeight              | no       | 50         | Min height of the panel
-| sliderMaxHeight              | no       | Dimensions.get('window').height * 0.5         | Max height of the panel
-| animation              | no       | Easing.quad         | The close/open animation of the panel
-| onOpen              | no       | () => null        | Function to execute when the panel is opened
-| onClose              | no       | () => null        | Function to execute when the panel is closed
-| initialPosition              | no       | 0         | Determines initial position point of bottom sheet. The value outside of snap points. 
+| snapPoints                   | yes      |           | E.g. `[100, 300, 0]`. Points for snapping of bottom sheet coomponent. They define distance from bottom of the screen. Might be number or percent (as string e.g. `'20%'`) for points or percents of screen height from bottom. Note: Array values must be in descending order. |
+| initialPosition              | no       | 0         | Determines initial position point of bottom sheet. The value outside of snap points.                                                                                                                                                                                           |
+| renderContent                         | no       |           | Method for rendering scrollable content of bottom sheet.                                                                                                                                                                                                                       |
+| renderHeader                       | no       |           | Method for rendering scrollable header of bottom sheet.                                                                                                                                                                                                                    |
+| headerPosition                   | no       | `number`   | Reanimated node which holds position of bottom sheet's header (in dp)                                                                                                                                                                                                                                     |
+| contentPosition     | no       | `number`   | Reanimated node which holds position of bottom sheet;s content (in dp).                                                                                                                                                                                                           |
+| onOpenStart              | no       | () => null        | Function to execute when the panel is opened
+| onCloseStart              | no       | () => null        | Function to execute when the panel is closed
+| enabledGestureInteraction              | no       | false        | Defines if bottom sheet could be scrollable by gesture. Defaults to true.
 
 ## Contributors ✨
 

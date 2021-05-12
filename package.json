@@ -1,0 +1,74 @@
+{
+  "name": "react-native-rana-bottomsheet",
+  "version": "0.0.1",
+  "description": "This is testing purpose.",
+  "main": "src/index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moonubanna/react-native-rana-bottomsheet.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "bottomsheet",
+    "bottom",
+    "android",
+    "ios",
+    "swipper",
+    "picker",
+    "dialog",
+    "action-sheet-bottom-sheet"
+  ],
+  "author": "Praveen singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moonubanna/react-native-rana-bottomsheet/issues"
+  },
+  "homepage": "https://github.com/Moonubanna/react-native-rana-bottomsheet#readme",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-gesture-handler": "*",
+    "react-native-reanimated": "*"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^7.5.0",
+    "@react-native-community/bob": "^0.9.3",
+    "@release-it/conventional-changelog": "^1.1.0",
+    "@types/react": "^16.8.14",
+    "@types/react-native": "^0.57.50",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
+    "babel-eslint": "^10.0.1",
+    "commitlint": "^7.5.2",
+    "conventional-changelog-cli": "^2.0.12",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "husky": "^1.3.1",
+    "prettier": "^1.17.0",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-reanimated": "^1.0.1",
+    "release-it": "^12.4.3",
+    "typescript": "^3.4.5"
+  },
+  "@react-native-community/bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "npm": {
+    "publish": true
+  },
+  "github": {
+    "release": true
+  }
+}
