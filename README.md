@@ -83,7 +83,7 @@ Thanks goes to these wonderful people:
 <!-- prettier-ignore -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/Moonubanna"><img src="https://avatars.githubusercontent.com/u/17289834?v=4" width="100px;" alt="Praveen singh"/><br /><sub><b>Numan</b></sub></a><br /><a href="#infra-Numan" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/Moonubanna" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Moonubanna"><img src="https://avatars.githubusercontent.com/u/17289834?v=4" width="100px;" alt="Praveen singh"/><br /><sub><b>Praveen singh</b></sub></a><br /><a href="#Moonubanna" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/Moonubanna" title="Code">💻</a></td>
   </tr>
 </table>
 
